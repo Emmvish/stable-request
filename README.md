@@ -1,4 +1,4 @@
-# stable-request 🔒
+# @emmvish/stable-request
 
 > ⚠️ **Maintenance Mode Notice**: This library is now in maintenance mode. For the full-featured execution engine with workflows, schedulers, API gateways, and more, please use [**stable-infra**](https://npmjs.com/package/@emmvish/stable-infra) - the natural evolution of stable-request. If you wish to continue using stable-request for workflows / gateway / scheduling, then, refer to its docs in version 2.8.5.
 
