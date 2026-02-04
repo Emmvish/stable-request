@@ -1,7 +1,7 @@
 {
   "name": "@emmvish/stable-request",
   "version": "3.0.0",
-  "description": "A resilient HTTP request library with built-in retry strategies, circuit breakers, caching, and state persistence. Now in maintenance mode - see stable-infra for the full execution engine.",
+  "description": "A production-grade resilient & flexible execution engine for resilient API Integrations.",
   "type": "module",
   "main": "dist/index.js",
   "module": "./dist/index.js",
@@ -12,42 +12,52 @@
   ],
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "jest"
   },
   "keywords": [
     "stability",
     "resilience",
+    "workflow",
     "http",
+    "function",
+    "gateway",
+    "scheduler",
+    "orchestrator",
+    "engine",
+    "integration",
+    "batch processing",
     "request",
     "retry",
-    "retry request",
     "circuit breaker",
     "caching",
-    "state persistence",
+    "rate limiting",
+    "concurrency",
+    "persistence",
     "axios",
     "typescript"
   ],
   "author": "Manish Varma",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/emmvish/stable-request"
-  },
-  "homepage": "https://github.com/emmvish/stable-request#readme",
-  "bugs": {
-    "url": "https://github.com/emmvish/stable-request/issues"
-  },
   "devDependencies": {
-    "@types/jest": "^29.5.0",
+    "@jest/globals": "^30.2.0",
+    "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.0",
+    "jest": "^30.2.0",
+    "nock": "^14.0.10",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "axios": "^1.0.0"
+    "axios": "^1.12.2"
   },
-  "engines": {
-    "node": ">=18.0.0"
+  "repository": "github:Emmvish/stable-request",
+  "homepage": "https://emmvish.github.io/stable-request",
+  "bugs": {
+    "url": "https://github.com/Emmvish/stable-request/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
