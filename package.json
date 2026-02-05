@@ -51,7 +51,7 @@
     "axios": "^1.12.2"
   },
   "repository": "github:Emmvish/stable-request",
-  "homepage": "https://emmvish.github.io/stable-request",
+  "homepage": "https://github.com/Emmvish/stable-request/blob/main/README.md",
   "bugs": {
     "url": "https://github.com/Emmvish/stable-request/issues"
   },
