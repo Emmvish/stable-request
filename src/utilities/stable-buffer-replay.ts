@@ -1,5 +1,6 @@
 import { StableBuffer } from '../core/stable-buffer.js';
 import { isStableBuffer } from './buffer-utils.js';
+import { SkipReason } from '../enums/index.js';
 import type {
   BufferLike,
   StableBufferInstance,
@@ -73,13 +74,13 @@ export async function replayStableBufferTransactions(
   for (const log of orderedLogs) {
     if (activityFilter && !activityFilter(log)) {
       skipped += 1;
-      onSkip?.(log, 'filtered');
+      onSkip?.(log, SkipReason.FILTERED);
       continue;
     }
 
     if (dedupe && log.transactionId && appliedIds.has(log.transactionId)) {
       skipped += 1;
-      onSkip?.(log, 'duplicate');
+      onSkip?.(log, SkipReason.DUPLICATE);
       continue;
     }
 
@@ -93,7 +94,7 @@ export async function replayStableBufferTransactions(
       }
 
       skipped += 1;
-      onSkip?.(log, 'missing-handler');
+      onSkip?.(log, SkipReason.MISSING_HANDLER);
       continue;
     }
 
