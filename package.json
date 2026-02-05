@@ -1,6 +1,6 @@
 {
   "name": "@emmvish/stable-request",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A production-grade resilient & flexible execution engine for resilient API Integrations.",
   "type": "module",
   "main": "dist/index.js",

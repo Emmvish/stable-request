@@ -52,3 +52,14 @@ export enum PersistenceStage {
   BEFORE_HOOK = 'before_hook',
   AFTER_HOOK = 'after_hook'
 }
+
+export enum SkipReason {
+  FILTERED = 'filtered',
+  DUPLICATE = 'duplicate',
+  MISSING_HANDLER = 'missing-handler'
+}
+
+export enum InfrastructurePersistenceOperationTypes {
+  LOAD = 'load',
+  STORE = 'store'
+}

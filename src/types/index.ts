@@ -8,7 +8,9 @@ import {
   AnomalySeverity,
   ViolationType,
   PersistenceStage,
-  CircuitBreakerState
+  CircuitBreakerState,
+  SkipReason,
+  InfrastructurePersistenceOperationTypes
 } from '../enums/index.js';
 
 import { CircuitBreaker } from '../utilities/index.js';
@@ -123,7 +125,7 @@ export interface StableBufferReplayOptions {
   allowUnknownHooks?: boolean;
   activityFilter?: (log: StableBufferTransactionLog) => boolean;
   onApply?: (log: StableBufferTransactionLog) => void;
-  onSkip?: (log: StableBufferTransactionLog, reason: 'filtered' | 'duplicate' | 'missing-handler') => void;
+  onSkip?: (log: StableBufferTransactionLog, reason: SkipReason) => void;
   onError?: (log: StableBufferTransactionLog, error: unknown) => void;
 }
 
@@ -281,7 +283,7 @@ export interface StatePersistenceConfig {
   storeAfterHooks?: boolean;
 }
 
-export type InfrastructurePersistenceOperationType = 'load' | 'store';
+export type InfrastructurePersistenceOperationType = InfrastructurePersistenceOperationTypes.LOAD | InfrastructurePersistenceOperationTypes.STORE;
 
 export interface InfrastructurePersistenceOperation<TState> {
   operationId: string;

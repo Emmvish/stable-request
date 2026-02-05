@@ -85,6 +85,8 @@ export {
   AnomalySeverity,
   ViolationType,
   PersistenceStage,
+  SkipReason,
+  InfrastructurePersistenceOperationTypes,
   INVALID_AXIOS_RESPONSES,
 } from './enums/index.js';
 
